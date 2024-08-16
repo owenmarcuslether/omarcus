@@ -1,6 +1,4 @@
 # Tic Tac Toe 
-import random
-nevermoved = False
 turn = False
 aa = "   "
 ab = "   "
@@ -12,11 +10,9 @@ ca = "   "
 cb = "   "
 cc = "   "
 spots = [aa,ab,ac,ba,bb,bc,ca,cb,cc]
-tlcorner = 1
-trcorner = 1
-blcorner = 1
-brcorner = 1
+corners = 0
 botmove = 0
+
 def playerturn():
     playermove = int(input("Select a square to mark with an X. Use single digit, non-zero numbers only."))
     playermove = playermove - 1
@@ -30,28 +26,32 @@ def playerturn():
         playerturn()
 
 def botturn():
-#    if nevermoved == True:
-#        spots[0] = " O "
-#    if aa == " X ":
-#        tlcorner = 0
-#    if ac == " X ":
-#        trcorner = 0
-#    if ca == " X ":
-#        blcorner = 0
-#    if cc == " X ":
-#       brcorner = 0
-#    if tlcorner == 1 and trcorner == 1 and blcorner == 1 and brcorner == 1:
-#        pass
-    botmove = random.randint(-1,9)
-    if spots[botmove] == " X ":
-        botmove = random.randint(-1,9)
-    else: 
-        spots[botmove] = " O "
+    if ba == " X " and bc == " X " or ab == " X " and cb == " X ": #Emergency block off if they're gonna win by avoiding the corners
+        if bb != " O " or bb != " X ":
+            bb = " O "
+        else:
+            pass
+
+
+    if aa == "   ":
+        aa = " O "
+        playerturn()
+    elif ac == "   ":
+        ac = " O "
+        playerturn()
+    elif ca == "   ":
+        ca = " O "
+        playerturn()
+    elif cc == "   " and corners <3:
+        cc = " O "
+        playerturn()
+       
+    if corners == 3:
+        pass
     print(spots)
     playerturn()
 
 if input("Will you go first or second? Return a 1 or a 2.") == ("1"):
     playerturn()
 else:
-    nevermoved = True
     botturn()
