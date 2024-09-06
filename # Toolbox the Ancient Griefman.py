@@ -28,8 +28,7 @@ pygame.display.set_caption(title)
 font = pygame.font.Font('freesansbold.ttf', 32)
 text = font.render(title, True, white, blue)
 textRect = text.get_rect()
-textRect.center = (width // 2, height // 4)  # Moved title text higher
-
+textRect.center = (width // 2, height // 4) 
 while True: 
     for ev in pygame.event.get(): 
         if ev.type == pygame.QUIT: 
