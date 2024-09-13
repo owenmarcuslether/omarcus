@@ -35,10 +35,12 @@ class Wretch(Mortal):
         self.faith = 0
         self.intelligence = 0
 
-print(" You are currently Nine Hundred And Ninety Nine Below. All you have known has been consumed by the Crumble,\n a result of a ritual to crack the Earth and bring forth Hell. The occultists,\n who were well versed in manipulating fate, hid their lair from the very gods beneath the Earth.\n Now that you're underground, too, you ought to find them before the demons get you.\n You remember you were...")
+print(" You are currently Ninety Nine Below. All you have known has been consumed by the Crumble,\n a result of a ritual to crack the Earth and bring forth Hell. The occultists,\n well versed in manipulating fate, hid their lair from the very gods beneath the Earth.\n Now that you're underground, too, you ought to find them before the demons get you.\n You remember you were...")
 print("...a mortal...\n...a wretched beast...")
 choice = input()
+
 def choice1():
+    global choice, result, player
     if choice == "a mortal":
         result = 1
         print("I remember a little more... You were Man, a creature of war and industry. \nYour industry happened to be mercenary work...")
@@ -53,6 +55,7 @@ def choice1():
         choice = input()
         choice1()
 def choice2():
+    global choice, result, player
     if choice == "a hireling":
         print("You could wield a sword, axe, or spear just fine, and it suited your explosive personality.\n You have lived in the Channel for ages; you've almost grown accustomed to the sound of the Underriver and the bodies that happen to fall in.\n Slaying some hellspawn will be a piece of cake for you.")
         player = Meathead(0,0,5,2,2,2,2,2)
@@ -68,3 +71,10 @@ def choice2():
     else:
         print("No, you were not. What were you, truly..?")
         choice = input("...a hireling...\n...a battlemage...\n...a picklock...\n...a priest...")
+def introduction():
+    print("You open your eyes. Bruised and battered from the roughly hundred foot drop,\n you barely manage to pick yourself up. A doorway lies between you and your journey. It is locked.\n")
+
+
+choice1()
+choice2()
+introduction()
