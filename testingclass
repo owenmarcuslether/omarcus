@@ -1,0 +1,12 @@
+class Amogsus:
+    def __init__(self,desire):
+        self.desire = desire
+    
+    def pen(self):
+        if self.desire == True:
+            def amog(self):
+                print("it work!!!")
+        else:
+            def sus(self):
+                print("sus!!!")
+johnpork = Amogsus(True)

@@ -30,15 +30,13 @@ while running == True:
         if ev.type == pygame.MOUSEBUTTONDOWN:
             if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40:
                 quit()
-                break
-    if running == False:
-        break
-    mouse = pygame.mouse.get_pos()
-    screen.fill(black) 
-    if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
-        pygame.draw.rect(screen,white,[width/2,height/2,140,40]) 
-    else: 
-        pygame.draw.rect(screen,grey,[width/2,height/2,140,40]) 
-    text = font.render('quit' , True , black) 
-    screen.blit(text, (width/2+50,height/2)) 
-    pygame.display.update()
+    if running == True:
+        mouse = pygame.mouse.get_pos()
+        screen.fill(black) 
+        if width/2 <= mouse[0] <= width/2+140 and height/2 <= mouse[1] <= height/2+40: 
+            pygame.draw.rect(screen,white,[width/2,height/2,140,40]) 
+        else: 
+            pygame.draw.rect(screen,grey,[width/2,height/2,140,40]) 
+        text = font.render('quit' , True , black) 
+        screen.blit(text, (width/2+50,height/2)) 
+        pygame.display.update()
